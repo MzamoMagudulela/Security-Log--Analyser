@@ -315,7 +315,7 @@ git commit -m "feat: initial commit of Security Log Analyser portfolio project"
 
 # 4. Set main branch and remote
 git branch -M main
-git remote add origin https://github.com/MzamoMagudulela/Security-Log-Analyser.git
+git remote add origin https://github.com/MzamoMagudulela/Security-Log--Analyser.git
 
 # 5. Push code
 git push -u origin main
