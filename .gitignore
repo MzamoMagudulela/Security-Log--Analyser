@@ -1,0 +1,33 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Operating System Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Streamlit runtime data
+.streamlit/secrets.toml
+
+# Reports and temporary user outputs
+exports/
+reports/
+*.pdf
+*.csv
+!tests/
+!data/
+
+# Protect uploaded real logs (preserve sample demo logs)
+*.log
+!data/sample_auth.log

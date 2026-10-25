@@ -1,0 +1,61 @@
+# ==============================================================================
+# SYNTHETIC SAMPLE AUTHENTICATION LOG - FOR DEMONSTRATION & TESTING ONLY
+# All usernames, IP addresses (RFC 5737 TEST-NET), and hostnames are synthetic.
+# ==============================================================================
+Oct 25 08:00:12 srv-prod-01 sshd[1001]: Accepted password for alice from 192.168.1.50 port 54122 ssh2
+Oct 25 08:00:15 srv-prod-01 sshd[1001]: pam_unix(sshd:session): session opened for user alice by (uid=0)
+Oct 25 08:05:30 srv-prod-01 sudo:   alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/systemctl status nginx
+Oct 25 08:12:44 srv-prod-01 sshd[1001]: pam_unix(sshd:session): session closed for user alice
+Oct 25 08:15:01 srv-prod-01 CRON[1045]: (root) CMD (/usr/local/bin/backup-sync.sh > /dev/null 2>&1)
+Oct 25 08:30:00 srv-prod-01 sshd[1080]: Accepted publickey for bob from 10.0.0.15 port 49200 ssh2
+Oct 25 08:30:02 srv-prod-01 sshd[1080]: pam_unix(sshd:session): session opened for user bob by (uid=0)
+# --- SCENARIO 1: Brute Force Attack Trigger (Rule 1 & Rule 4) from 203.0.113.45 ---
+Oct 25 09:01:05 srv-prod-01 sshd[2101]: Failed password for invalid user admin from 203.0.113.45 port 39120 ssh2
+Oct 25 09:01:22 srv-prod-01 sshd[2104]: Failed password for invalid user root from 203.0.113.45 port 39122 ssh2
+Oct 25 09:01:45 srv-prod-01 sshd[2108]: Failed password for invalid user test from 203.0.113.45 port 39126 ssh2
+Oct 25 09:02:10 srv-prod-01 sshd[2112]: Failed password for invalid user oracle from 203.0.113.45 port 39130 ssh2
+Oct 25 09:02:35 srv-prod-01 sshd[2116]: Failed password for invalid user deploy from 203.0.113.45 port 39134 ssh2
+Oct 25 09:02:59 srv-prod-01 sshd[2120]: Failed password for invalid user guest from 203.0.113.45 port 39138 ssh2
+Oct 25 09:03:20 srv-prod-01 sshd[2124]: Failed password for invalid user git from 203.0.113.45 port 39142 ssh2
+Oct 25 09:03:45 srv-prod-01 sshd[2128]: Failed password for invalid user postgres from 203.0.113.45 port 39146 ssh2
+Oct 25 09:04:10 srv-prod-01 sshd[2132]: Failed password for invalid user support from 203.0.113.45 port 39150 ssh2
+Oct 25 09:04:40 srv-prod-01 sshd[2136]: Connection closed by 203.0.113.45 port 39150 [preauth]
+# --- SCENARIO 2: Brute Force Followed by Successful Compromise (Rule 1 & Rule 2) from 198.51.100.22 ---
+Oct 25 09:10:02 srv-prod-01 sshd[2201]: Failed password for devops from 198.51.100.22 port 44100 ssh2
+Oct 25 09:10:25 srv-prod-01 sshd[2204]: Failed password for devops from 198.51.100.22 port 44102 ssh2
+Oct 25 09:10:50 srv-prod-01 sshd[2207]: Failed password for devops from 198.51.100.22 port 44104 ssh2
+Oct 25 09:11:15 srv-prod-01 sshd[2210]: Failed password for devops from 198.51.100.22 port 44106 ssh2
+Oct 25 09:11:40 srv-prod-01 sshd[2213]: Failed password for devops from 198.51.100.22 port 44108 ssh2
+Oct 25 09:12:10 srv-prod-01 sshd[2220]: Accepted password for devops from 198.51.100.22 port 44112 ssh2
+Oct 25 09:12:12 srv-prod-01 sshd[2220]: pam_unix(sshd:session): session opened for user devops by (uid=0)
+# --- SCENARIO 3: Unusual High-Velocity Event Burst (Rule 3) from 198.51.100.99 ---
+Oct 25 09:20:01 srv-prod-01 sshd[3001]: Failed password for invalid user u1 from 198.51.100.99 port 50001 ssh2
+Oct 25 09:20:03 srv-prod-01 sshd[3002]: Failed password for invalid user u2 from 198.51.100.99 port 50002 ssh2
+Oct 25 09:20:05 srv-prod-01 sshd[3003]: Failed password for invalid user u3 from 198.51.100.99 port 50003 ssh2
+Oct 25 09:20:07 srv-prod-01 sshd[3004]: Failed password for invalid user u4 from 198.51.100.99 port 50004 ssh2
+Oct 25 09:20:09 srv-prod-01 sshd[3005]: Failed password for invalid user u5 from 198.51.100.99 port 50005 ssh2
+Oct 25 09:20:11 srv-prod-01 sshd[3006]: Failed password for invalid user u6 from 198.51.100.99 port 50006 ssh2
+Oct 25 09:20:13 srv-prod-01 sshd[3007]: Failed password for invalid user u7 from 198.51.100.99 port 50007 ssh2
+Oct 25 09:20:15 srv-prod-01 sshd[3008]: Failed password for invalid user u8 from 198.51.100.99 port 50008 ssh2
+Oct 25 09:20:17 srv-prod-01 sshd[3009]: Failed password for invalid user u9 from 198.51.100.99 port 50009 ssh2
+Oct 25 09:20:19 srv-prod-01 sshd[3010]: Failed password for invalid user u10 from 198.51.100.99 port 50010 ssh2
+Oct 25 09:20:21 srv-prod-01 sshd[3011]: Failed password for invalid user u11 from 198.51.100.99 port 50011 ssh2
+Oct 25 09:20:23 srv-prod-01 sshd[3012]: Failed password for invalid user u12 from 198.51.100.99 port 50012 ssh2
+Oct 25 09:20:25 srv-prod-01 sshd[3013]: Failed password for invalid user u13 from 198.51.100.99 port 50013 ssh2
+Oct 25 09:20:27 srv-prod-01 sshd[3014]: Failed password for invalid user u14 from 198.51.100.99 port 50014 ssh2
+Oct 25 09:20:29 srv-prod-01 sshd[3015]: Failed password for invalid user u15 from 198.51.100.99 port 50015 ssh2
+Oct 25 09:20:31 srv-prod-01 sshd[3016]: Failed password for invalid user u16 from 198.51.100.99 port 50016 ssh2
+Oct 25 09:20:33 srv-prod-01 sshd[3017]: Failed password for invalid user u17 from 198.51.100.99 port 50017 ssh2
+Oct 25 09:20:35 srv-prod-01 sshd[3018]: Failed password for invalid user u18 from 198.51.100.99 port 50018 ssh2
+Oct 25 09:20:37 srv-prod-01 sshd[3019]: Failed password for invalid user u19 from 198.51.100.99 port 50019 ssh2
+Oct 25 09:20:39 srv-prod-01 sshd[3020]: Failed password for invalid user u20 from 198.51.100.99 port 50020 ssh2
+Oct 25 09:20:41 srv-prod-01 sshd[3021]: Failed password for invalid user u21 from 198.51.100.99 port 50021 ssh2
+Oct 25 09:20:45 srv-prod-01 sshd[3022]: Connection closed by 198.51.100.99 port 50022 [preauth]
+# --- SCENARIO 4: Malformed, Unrecognized & Edge Case Lines ---
+MALFORMED_HEADER_DATA_NO_TIMESTAMP_OR_HOST
+Oct 25 09:25:00 srv-prod-01 systemd[1]: Started Daily apt upgrade and clean activities.
+Oct 25 09:30:10 srv-prod-01 sshd[3100]: Invalid user tempuser from 999.999.999.999 port 2222
+Oct 25 09:32:00 srv-prod-01 sshd[3105]: pam_unix(sshd:auth): check pass; user unknown
+Oct 25 09:40:00 srv-prod-01 sshd[3110]: Accepted password for charlie from 192.168.1.101 port 52331 ssh2
+Oct 25 09:40:02 srv-prod-01 sshd[3110]: pam_unix(sshd:session): session opened for user charlie by (uid=0)
+Oct 25 09:55:00 srv-prod-01 sshd[3110]: pam_unix(sshd:session): session closed for user charlie
